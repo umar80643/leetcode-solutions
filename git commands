@@ -1,0 +1,4 @@
+save a file run
+git add .
+git commit -m "Solved LeetCode <problem_number>"
+git push
