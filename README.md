@@ -1,6 +1,6 @@
 # 🚀 LeetCode Solutions
 
-This repository contains my solutions to **100+ LeetCode problems** solved in **Python**.
+This repository contains my solutions to ** LeetCode problems** solved in **Python**.
 
 I use this repository to:
 - Practice Data Structures & Algorithms (DSA)
