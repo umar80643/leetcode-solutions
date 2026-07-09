@@ -10,5 +10,4 @@ for i in range(len(nums)):
 
     else:
         d[nums[i]]=i
-
 print(False)
