@@ -4,7 +4,7 @@ c = 4
 l=0
 r=floor(sqrt(c))
 while l<=r:
-    total = l**l + r**r
+    total = l**2 + r**2
     if total == c:
         print(True)
         break
