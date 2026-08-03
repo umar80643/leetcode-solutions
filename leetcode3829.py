@@ -15,7 +15,7 @@ class RideSharingSystem:
             rider = self.riders.pop(0);
             driver = self.drivers.pop(0);
             return [rider, driver]
-        return []
+        return [-1,-1]
 
 
 
