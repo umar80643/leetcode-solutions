@@ -1,4 +1,3 @@
-
 n = 234
 mutiply_val =1
 sum_val =0
