@@ -1,23 +1,35 @@
-import heapq
 
 nums1 = [1,2,3,4]
 nums2 = [2,10,20,19]
 k1 = 0
 k2 = 0
 
-diff =[abs(a-b) for a,b in zip(nums1,nums2)]
-k=k1+k2
-if sum(diff) <=k:
+diff = [abs(a - b) for a, b in zip(nums1, nums2)]
+k = k1 + k2
+
+if sum(diff) <= k:
     print(0)
 
-heap =[-x for x in diff]
-heapq.heapify(heap)
+left, right = 0, max(diff)
 
-while k>0:
-    largest = -heapq.heappop(heap)
-    largest -= 1
-    heapq.heappush(heap,largest)
-    k -= 1
+# Find the smallest level we can reduce all
+# differences to using at most k operations.
+while left < right:
+    mid = (left + right) // 2
+    operations = sum(max(0, x - mid) for x in diff)
 
+    if operations <= k:
+        right = mid
+    else:
+        left = mid + 1
 
-print( sum(x * x for x in diff) if False else sum((-x) ** 2 for x in diff))
+level = left
+operations = sum(max(0, x - level) for x in diff)
+remaining = k - operations
+
+ans = sum(min(x, level) ** 2 for x in diff)
+
+# Use leftover operations to reduce some level values by 1.
+ans -= remaining * (2 * level - 1)
+
+print(ans)
